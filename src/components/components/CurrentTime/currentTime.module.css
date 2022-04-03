@@ -1,0 +1,43 @@
+.time {
+    font-size: 10rem;
+}
+
+.time:hover > .tooltip-wrapper {
+    visibility: visible;
+}
+
+.tooltip-wrapper {
+    visibility: hidden;
+    display: inline-flex;
+    position: relative;
+}
+
+.tooltip-wrapper .tooltip {
+    min-width: max-content;
+    top: 50%;
+    left: 100%;
+    margin-left: 20px;
+    transform: translate(0, -35%);
+    padding: 10px 20px;
+    color: var(--light);
+    background-color: var(--dark);
+    border-radius: 8px;
+    position: absolute;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.tooltip-wrapper:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-wrapper .tooltip::after {
+    content: "";
+    position: absolute;
+    right: 100%;
+    border: 5px solid transparent;
+    border-right-color: var(--dark);
+}
