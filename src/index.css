@@ -1,13 +1,251 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    text-shadow: 0px 0px 50px rgb(0, 0, 0);
+    --transition: all 0.3s ease;
+    user-select: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    user-select: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--light);
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1527489377706-5bf97e608852?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1918&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(128, 128, 128, 0.25);
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-bar,
+.top-bar {
+    min-height: 4rem;
+    align-items: center;
+    max-height: 4rem;
+    display: flex;
+}
+
+.loader > * {
+    display: block;
+}
+
+/* tooltip  */
+
+/* tooltip  */
+
+/* google search starts */
+
+.bottom-left,
+.bottom-right,
+.top-right,
+.top-left {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box {
+    display: inline-flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0.5rem;
+    border-bottom: 1.5px solid transparent;
+    transition: var(--transition);
+}
+
+.search-box:focus-within > #search-logo,
+#google-logo {
+    display: none;
+}
+
+.search-box:hover {
+    border-bottom: 1.5px solid #f1f5f971;
+    transition: var(--transition);
+}
+
+.search-box:focus-within {
+    border-bottom: 1.5px solid var(--light);
+    transition: var(--transition);
+}
+
+.search-box:focus-within > #google-logo {
+    display: block;
+}
+
+.weather-search,
+.todos-input,
+.focus-input,
+.search {
+    margin: 0 auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    outline: none;
+}
+
+input[type="text"]::selection {
+    background-color: #f1f5f971;
+}
+
+/* google search ends */
+
+/* weather starts */
+
+.top-right {
+    margin-right: 0.5rem;
+    margin-left: auto;
+    flex-basis: 6rem;
+}
+
+/* weather ends */
+
+/* clock and focus starts */
+
+.clock-greeting-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.focus-input {
+    border-bottom: 2px solid var(--light);
+    min-width: 35rem;
+    text-align: inherit;
+    cursor: auto;
+}
+
+/* clock and focus ends */
+
+.bottom-bar {
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+}
+
+.bottom-left-setting {
+    opacity: 0.4;
+    margin-left: 1rem;
+}
+
+/* quote starts */
+
+.bottom-center-quote {
+    height: 100%;
+    width: 70%;
+    min-height: fit-content;
+    text-align: center;
+    position: relative;
+}
+
+.quote-text {
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s ease;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.quote-author {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.3s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-center-quote:hover > .quote-author {
+    transform: translate(-50%, 0%);
+    opacity: 1;
+}
+
+.bottom-center-quote:hover > .quote-text {
+    transform: translate(-50%, -80%);
+}
+
+/* quote starts */
+
+/* Todos starts */
+
+.bottom-right-todo {
+    position: relative;
+    margin-right: 1rem;
+}
+
+.todos-list {
+    border-radius: 0.5rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.658);
+    min-height: 15rem;
+    max-height: 70vh;
+    width: 20rem;
+    bottom: 2rem;
+    right: 0;
+    display: flex;
+    overflow: auto;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    /* asas */
+    display: none;
+}
+
+.todos-list > *:only-child {
+    margin: 2rem 0;
+    max-height: 100%;
+    width: 100%;
+}
+
+.empty-todo {
+    text-align: center;
+    width: 100%;
+}
+
+.todo-item {
+    margin-left: 1rem;
+}
+
+.todo-item label {
+    display: inline-flex;
+    align-items: center;
+}
+.todo-item input[type="checkbox"] {
+    margin: 0 0.5rem;
+}
+
+.todos-input {
+    align-self: flex-end;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.todos-input::placeholder {
+    font-weight: 600;
+}
+
+/* Todos ends */
