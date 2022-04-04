@@ -90,6 +90,14 @@
     display: block;
 }
 
+.search::placeholder {
+    color: var(--light);
+}
+
+.search-box:focus-within .search::placeholder {
+    color: #f1f5f971;
+}
+
 .weather-search,
 .todos-input,
 .focus-input,
@@ -196,53 +204,16 @@ input[type="text"]::selection {
     margin-right: 1rem;
 }
 
-.todos-list {
-    border-radius: 0.5rem;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.658);
-    min-height: 15rem;
-    max-height: 70vh;
-    width: 20rem;
-    bottom: 2rem;
-    right: 0;
-    display: flex;
-    overflow: auto;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-
-    /* asas */
-    display: none;
-}
-
-.todos-list > *:only-child {
-    margin: 2rem 0;
-    max-height: 100%;
-    width: 100%;
-}
-
-.empty-todo {
-    text-align: center;
-    width: 100%;
-}
-
-.todo-item {
-    margin-left: 1rem;
-}
-
-.todo-item label {
-    display: inline-flex;
-    align-items: center;
-}
-.todo-item input[type="checkbox"] {
-    margin: 0 0.5rem;
+.bottom-right-todo > span:first-child{
+    cursor: pointer;
 }
 
 .todos-input {
     align-self: flex-end;
     width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    padding: unset;
+    margin:  0.5rem 0 0 0.5rem;
 }
 
 .todos-input::placeholder {
@@ -250,5 +221,3 @@ input[type="text"]::selection {
 }
 
 /* Todos ends */
-
-
