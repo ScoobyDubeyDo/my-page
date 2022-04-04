@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HomePage, NewUser } from "./components";
+import { HomePage, NewUser } from "./screens";
 import { useBackgroundImage } from "./hooks";
 
 function App() {

@@ -1,0 +1,45 @@
+.todos-list {
+    border-radius: 0.5rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.81);
+    /* min-height: 15rem; */
+    max-height: 70vh;
+    width: 20rem;
+    bottom: 2rem;
+    right: 0;
+    display: flex;
+    overflow: auto;
+    justify-content: flex-start;
+    /* align-content: flex-end; */
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.todos-list > *:first-child {
+    max-height: 100%;
+    width: 100%;
+    gap: unset;
+}
+
+.empty-todo {
+    text-align: center;
+    width: 100%;
+    min-height: 12rem;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-break: break-word;
+    line-break: anywhere;
+}
+
+.todo-item label {
+    display: inline-flex;
+    align-items: center;
+}
+.todo-item input[type="checkbox"] {
+    margin: 0 0.5rem;
+}

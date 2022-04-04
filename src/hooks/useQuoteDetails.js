@@ -8,7 +8,7 @@ export const useQuoteDetails = () => {
         (async () => {
             try {
                 const res = await get(
-                    "https://api.quotable.io/random?tags=education|faith|wisdom|future|friendship|happiness|inspirational|success|&maxLength=100"
+                    "https://api.quotable.io/random?tags=education|faith|wisdom|future|happiness|inspirational|success|&maxLength=90"
                 );
                 if (res.status === 200) {
                     setQuoteDetails({

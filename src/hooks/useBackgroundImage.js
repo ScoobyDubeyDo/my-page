@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { get } from "axios";
-
 export const useBackgroundImage = () => {
     const [bgURL, setBgURL] = useState(null);
-
     useEffect(() => {
         (async () => {
             try {
                 const res = await get(
-                    "https://pixabay.com/api/?key=26495632-0ad042a0bf74f0acd1f662053&image_type=photo&orientation=horizontal&category=nature&per_page=50&q=landscape&order=latest"
+                    "https://pixabay.com/api/?key=26495632-0ad042a0bf74f0acd1f662053&image_type=photo&category=nature&q=landscape&orientation=horizontal&per_page=50&order=popular"
                 );
                 setBgURL(
-                    res.data.hits[Math.floor(Math.random() * 50)].largeImageURL
+                    res.data.hits[
+                        Math.floor(Math.random() * res.data.hits.length)
+                    ].largeImageURL
                 );
             } catch (error) {
                 console.log(error.message);
@@ -21,6 +21,5 @@ export const useBackgroundImage = () => {
             }
         })();
     }, []);
-
     return bgURL;
 };

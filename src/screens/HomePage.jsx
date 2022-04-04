@@ -1,24 +1,29 @@
 import { RiSearchLine, RiGoogleFill, RiSettings5Fill } from "react-icons/ri";
 import date from "date-and-time";
-import { useState } from "react";
-import { CurrentTime, Weather } from "./components";
+import { useEffect, useState } from "react";
+import { CurrentTime, Todos, Weather } from "./components";
 import { useQuoteDetails } from "../hooks";
 
 export const HomePage = () => {
     const [searchInput, setSearchInput] = useState("");
     const { author, quote } = useQuoteDetails();
+    const [showTodoBox, setShowTodoBox] = useState(
+        JSON.parse(localStorage.getItem("showTodoBox"))
+    );
+
     const partOfDay = (() => {
         const hr = date.format(new Date(), "HH");
         if (hr >= 0 && hr < 12) {
-            return "Good Morning";
-        } else if (hr == 12) {
-            return "Good Noon";
+            return "Good morning";
+        } else if (hr === 12) {
+            return "Good noon";
         } else if (hr >= 12 && hr <= 17) {
-            return "Good Afternoon";
+            return "Good afternoon";
         } else {
-            return "Good Evening";
+            return "Good evening";
         }
     })();
+
     if (!author) return <></>;
 
     return (
@@ -84,30 +89,18 @@ export const HomePage = () => {
                         </cite>
                     </span>
                     <div className="bottom-right-todo">
-                        <span className="text-body-lg">Todo</span>
-                        <div className="todos-list">
-                            <ul className="vertical-list ">
-                                {/* <li className="empty-todo">
-                                    <p className="text-gutterBottom">
-                                        Add a todo to get started
-                                    </p>
-                                    <button className="btn-filled-blue">
-                                        New Todo
-                                    </button>
-                                </li> */}
-                                <li className="todo-item">
-                                    <label>
-                                        <input type="checkbox" />
-                                        Prepare for a quaterly meeting
-                                    </label>
-                                </li>
-                            </ul>
-                            <input
-                                type="text"
-                                className="todos-input"
-                                placeholder="New Todo"
-                            />
-                        </div>
+                        <span
+                            onClick={() =>
+                                setShowTodoBox((prev) => {
+                                    localStorage.setItem("showTodoBox", !prev);
+                                    return !prev;
+                                })
+                            }
+                            className="text-body-lg"
+                        >
+                            Todo
+                        </span>
+                        {showTodoBox && <Todos />}
                     </div>
                 </div>
             </div>

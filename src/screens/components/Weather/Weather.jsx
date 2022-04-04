@@ -28,7 +28,6 @@ export const Weather = () => {
         description: "",
         WindSpeed: 0,
         WindDirection: 0,
-        partOfDay: "",
         AirQualityIndex: 0,
         sunrise: "",
         sunset: "",
@@ -58,7 +57,6 @@ export const Weather = () => {
                     description: res.data.data[0].weather.description,
                     WindSpeed: res.data.data[0].wind_spd,
                     WindDirection: res.data.data[0].wind_dir,
-                    partOfDay: res.data.data[0].pod,
                     AirQualityIndex: res.data.data[0].aqi,
                     sunset: res.data.data[0].sunset,
                     sunrise: res.data.data[0].sunrise,
@@ -152,7 +150,7 @@ export const Weather = () => {
                         <div className={`${style["wind"]} flex-center`}>
                             <p className="heading-6">Wind:</p>
                             <p className="text-caption">
-                                {Math.ceil(weatherData.WindSpeed)}km/h
+                                {Math.ceil(weatherData.WindSpeed * 3.6)}km/h
                             </p>
                             <ImArrowDown2
                                 size={25}
@@ -176,7 +174,7 @@ export const Weather = () => {
                             </p>
                         </span>
                         <div className="divider-light-vertical" />
-                        <span className={`${style["extra-weather-data"]}`}>
+                        <span className={`${style["extra-weather-daa"]}`}>
                             <p className="text-body-sm">Sunrise:</p>
                             <WiSunrise size={40} />
                             <p className="text-caption">
