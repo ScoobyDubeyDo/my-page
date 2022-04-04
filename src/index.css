@@ -16,16 +16,17 @@
     visibility: hidden;
 }
 
-body {
-    background-image: url("https://images.unsplash.com/photo-1527489377706-5bf97e608852?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1918&q=80");
+.App {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgba(128, 128, 128, 0.25);
     height: 100vh;
 }
 
 .main {
+    background-color: rgba(0, 0, 0, 0.28);
+    min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
 }
@@ -178,7 +179,7 @@ input[type="text"]::selection {
 }
 
 .bottom-center-quote:hover > .quote-author {
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 30%);
     opacity: 1;
 }
 
@@ -249,3 +250,5 @@ input[type="text"]::selection {
 }
 
 /* Todos ends */
+
+
