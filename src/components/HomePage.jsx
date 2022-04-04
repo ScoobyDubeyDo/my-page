@@ -1,10 +1,25 @@
 import { RiSearchLine, RiGoogleFill, RiSettings5Fill } from "react-icons/ri";
-
+import date from "date-and-time";
 import { useState } from "react";
 import { CurrentTime, Weather } from "./components";
+import { useQuoteDetails } from "../hooks";
 
 export const HomePage = () => {
     const [searchInput, setSearchInput] = useState("");
+    const { author, quote } = useQuoteDetails();
+    const partOfDay = (() => {
+        const hr = date.format(new Date(), "HH");
+        if (hr >= 0 && hr < 12) {
+            return "Good Morning";
+        } else if (hr == 12) {
+            return "Good Noon";
+        } else if (hr >= 12 && hr <= 17) {
+            return "Good Afternoon";
+        } else {
+            return "Good Evening";
+        }
+    })();
+    if (!author) return <></>;
 
     return (
         <>
@@ -42,7 +57,7 @@ export const HomePage = () => {
                 <div className="clock-greeting-display">
                     <CurrentTime />
                     <div className="greeting heading-2">
-                        {`Good morning, ${localStorage.getItem("userName")}.`}
+                        {`${partOfDay}, ${localStorage.getItem("userName")}.`}
                     </div>
                     <div className="focus">
                         <div className="focus-title heading-4">
@@ -62,14 +77,12 @@ export const HomePage = () => {
                     <div className="bottom-left-setting">
                         <RiSettings5Fill size={22} />
                     </div>
-                    <div className="bottom-center-quote">
-                        <span className="quote-text heading-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing.
-                        </span>
-                        <span className="quote-author text-subtitle">
-                            Lorem, ipsum.
-                        </span>
-                    </div>
+                    <span className="bottom-center-quote">
+                        <blockquote className="quote-text heading-6">{`"${quote}"`}</blockquote>
+                        <cite className="quote-author text-subtitle">
+                            {author}
+                        </cite>
+                    </span>
                     <div className="bottom-right-todo">
                         <span className="text-body-lg">Todo</span>
                         <div className="todos-list">
