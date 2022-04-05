@@ -1,7 +1,7 @@
 import { RiSearchLine, RiGoogleFill, RiSettings5Fill } from "react-icons/ri";
 import date from "date-and-time";
 import { useEffect, useState } from "react";
-import { CurrentTime, Todos, Weather } from "./components";
+import { CurrentTime, TodaysFocus, Todos, Weather } from "./components";
 import { useQuoteDetails } from "../hooks";
 
 export const HomePage = () => {
@@ -64,19 +64,7 @@ export const HomePage = () => {
                     <div className="greeting heading-2">
                         {`${partOfDay}, ${localStorage.getItem("userName")}.`}
                     </div>
-                    <div className="focus">
-                        <div className="focus-title heading-4">
-                            What's your main focus for today?
-                        </div>
-                        <form onSubmit={(e) => e.preventDefault()}>
-                            <input
-                                className="focus-input heading-4"
-                                type="text"
-                                autoComplete="off"
-                                spellCheck={false}
-                            />
-                        </form>
-                    </div>
+                    <TodaysFocus />
                 </div>
                 <div className="bottom-bar">
                     <div className="bottom-left-setting">

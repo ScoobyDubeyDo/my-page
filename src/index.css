@@ -114,6 +114,26 @@ input[type="text"]::selection {
     background-color: #f1f5f971;
 }
 
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 12px;
+    min-height: 12px;
+    border: 1px solid var(--light);
+    position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "\2714";
+    position: absolute;
+    color: var(--light);
+    font-size: 12px;
+    bottom: 0px;
+    font-weight: 600;
+    left: 1px;
+}
+
 /* google search ends */
 
 /* weather starts */
@@ -172,7 +192,7 @@ input[type="text"]::selection {
     white-space: nowrap;
     position: absolute;
     top: 50%;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -180,7 +200,7 @@ input[type="text"]::selection {
 .quote-author {
     position: absolute;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -204,7 +224,7 @@ input[type="text"]::selection {
     margin-right: 1rem;
 }
 
-.bottom-right-todo > span:first-child{
+.bottom-right-todo > span:first-child {
     cursor: pointer;
 }
 
@@ -213,7 +233,7 @@ input[type="text"]::selection {
     width: 100%;
     font-size: 1rem;
     padding: unset;
-    margin:  0.5rem 0 0 0.5rem;
+    margin: 0.5rem 0 0 0.5rem;
 }
 
 .todos-input::placeholder {

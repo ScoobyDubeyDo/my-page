@@ -2,7 +2,6 @@
     border-radius: 0.5rem;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.81);
-    /* min-height: 15rem; */
     max-height: 70vh;
     width: 20rem;
     bottom: 2rem;
@@ -10,7 +9,6 @@
     display: flex;
     overflow: auto;
     justify-content: flex-start;
-    /* align-content: flex-end; */
     align-items: center;
     flex-wrap: wrap;
     padding: 1rem;

@@ -1,0 +1,37 @@
+.focus {
+    margin-top: 2rem;
+}
+
+.focus-done {
+    gap: 1rem;
+}
+
+.focus-display {
+    max-width: 50ch;
+    text-shadow: none;
+}
+
+.focus-buttons {
+    visibility: hidden;
+}
+
+.focus-done:hover > .focus-buttons {
+    visibility: visible;
+}
+
+.focus-done > *:nth-child(3) {
+    gap: 0.5rem;
+}
+
+.focus-done > *:nth-child(3) > input[type="checkbox"] {
+    min-width: 1.2rem;
+    min-height: 1.2rem;
+    margin-top: 0.4rem;
+    outline: none;
+    border-width: 2px;
+}
+
+.focus-done > *:nth-child(3) > input[type="checkbox"]:checked::after {
+    font-size: 1.5rem;
+    bottom: -2px;
+}
