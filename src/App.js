@@ -14,6 +14,7 @@ function App() {
     return (
         <div
             className="App"
+            // INLINE STYLES ARE REQUIRED HERE TO CONDITIONALLY CHANGE A PART OF THE VALUE, THIS IS NOT POSSIBLE WITH CLASS
             style={{
                 backgroundImage: `url(${url})`,
             }}

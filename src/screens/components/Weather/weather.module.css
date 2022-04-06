@@ -43,18 +43,18 @@
     border-bottom-color: rgba(0, 0, 0, 0.81);
 }
 
-.extra-weather-info input {
+.extra-weather-info .weather-search {
     padding: unset;
     margin: unset;
     display: inline-block;
     max-width: 10rem;
 }
 
-.extra-weather-info input + svg {
+.extra-weather-info .weather-search + svg {
     opacity: 0;
 }
 
-.extra-weather-info input:hover + svg {
+.extra-weather-info .weather-search:hover + svg {
     opacity: 0.4;
 }
 

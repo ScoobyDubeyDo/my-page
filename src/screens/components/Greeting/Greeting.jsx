@@ -47,6 +47,7 @@ export const Greeting = () => {
                         autoFocus
                         type="text"
                         value={nameInput}
+                        // INLINE STYLES ARE REQUIRED HERE TO CONDITIONALLY CHANGE A PART OF THE VALUE, THIS IS NOT POSSIBLE WITH CLASS
                         style={{
                             width: `${nameInput.length}ch`,
                         }}

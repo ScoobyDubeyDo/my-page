@@ -120,7 +120,7 @@ export const Weather = () => {
                             spellCheck={false}
                             autoComplete="off"
                             type="text"
-                            className="heading-6"
+                            className={`${style["weather-search"]} heading-6`}
                             value={citySearchInput}
                             onChange={(e) => setCitySearchInput(e.target.value)}
                             onKeyPress={(e) => {
@@ -154,6 +154,7 @@ export const Weather = () => {
                             </p>
                             <ImArrowDown2
                                 size={25}
+                                // INLINE STYLES ARE REQUIRED HERE TO CONDITIONALLY CHANGE A PART OF THE VALUE, THIS IS NOT POSSIBLE WITH CLASS
                                 style={{
                                     transform: `rotate(${weatherData.WindDirection}deg)`,
                                 }}
