@@ -43,12 +43,6 @@
     display: block;
 }
 
-/* tooltip  */
-
-/* tooltip  */
-
-/* google search starts */
-
 .bottom-left,
 .bottom-right,
 .top-right,
@@ -101,6 +95,7 @@
 .weather-search,
 .todos-input,
 .focus-input,
+.name-input,
 .search {
     margin: 0 auto;
     background: none;
@@ -134,19 +129,54 @@ input[type="checkbox"]:checked::after {
     left: 1px;
 }
 
-/* google search ends */
-
-/* weather starts */
-
 .top-right {
     margin-right: 0.5rem;
     margin-left: auto;
     flex-basis: 6rem;
 }
 
-/* weather ends */
+.name-input {
+    max-width: 15ch;
+    display: inline;
+    padding: unset;
+    text-align: center;
+}
 
-/* clock and focus starts */
+.tooltip-wrapper {
+    visibility: hidden;
+    display: inline-flex;
+    position: relative;
+}
+
+.tooltip-wrapper .tooltip {
+    min-width: max-content;
+    top: 50%;
+    left: 100%;
+    margin-left: 20px;
+    transform: translate(0, -35%);
+    padding: 10px 20px;
+    color: var(--light);
+    background-color: var(--dark);
+    border-radius: 8px;
+    position: absolute;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.tooltip-wrapper:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-wrapper .tooltip::after {
+    content: "";
+    position: absolute;
+    right: 100%;
+    border: 5px solid transparent;
+    border-right-color: var(--dark);
+}
 
 .clock-greeting-display {
     position: fixed;
@@ -156,14 +186,16 @@ input[type="checkbox"]:checked::after {
     text-align: center;
 }
 
+
+
+
+
 .focus-input {
     border-bottom: 2px solid var(--light);
     min-width: 35rem;
     text-align: inherit;
     cursor: auto;
 }
-
-/* clock and focus ends */
 
 .bottom-bar {
     align-items: center;
@@ -177,8 +209,6 @@ input[type="checkbox"]:checked::after {
     opacity: 0.4;
     margin-left: 1rem;
 }
-
-/* quote starts */
 
 .bottom-center-quote {
     height: 100%;
@@ -215,10 +245,6 @@ input[type="checkbox"]:checked::after {
     transform: translate(-50%, -80%);
 }
 
-/* quote starts */
-
-/* Todos starts */
-
 .bottom-right-todo {
     position: relative;
     margin-right: 1rem;
@@ -239,5 +265,3 @@ input[type="checkbox"]:checked::after {
 .todos-input::placeholder {
     font-weight: 600;
 }
-
-/* Todos ends */

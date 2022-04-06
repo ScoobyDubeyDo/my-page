@@ -21,12 +21,10 @@ export const CurrentTime = () => {
 
     return (
         <div className={`${style["time"]} flex-center`}>
-            <span className="icon-btn-ghost-sm hidden">
-                <ImLoop />
-            </span>
+            <span className="icon-btn-ghost-sm hidden"></span>
             {date.format(time, `${is24HourFormat ? "HH" : "h"}:mm`)}
             <button
-                className={`icon-btn-ghost-sm ${style["tooltip-wrapper"]}`}
+                className={`icon-btn-ghost-sm tooltip-wrapper `}
                 onClick={() =>
                     setIs24HourFormat((prev) => {
                         localStorage.setItem("is24HourFormat", !prev);
@@ -35,7 +33,7 @@ export const CurrentTime = () => {
                 }
             >
                 <ImLoop />
-                <div className={`${style["tooltip"]} text-body-sm`}>
+                <div className={`tooltip text-body-sm`}>
                     {`Switch to ${is24HourFormat ? "12" : "24"}-hour clock`}
                 </div>
             </button>
