@@ -13,3 +13,10 @@
 .greeting > span:nth-child(2) {
     max-width: 15ch;
 }
+
+.name-input {
+    max-width: 15ch;
+    display: inline;
+    padding: unset;
+    text-align: center;
+}

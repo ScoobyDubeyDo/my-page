@@ -133,7 +133,7 @@ export const TodaysFocus = () => {
                         What's your main focus for today?
                     </div>
                     <input
-                        className="focus-input heading-4"
+                        className={`${style["focus-input"]} heading-4`}
                         autoFocus={currentFocus.inEdit ? true : false}
                         type="text"
                         value={focusInput}

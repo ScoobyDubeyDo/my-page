@@ -35,3 +35,10 @@
     font-size: 1.5rem;
     bottom: -2px;
 }
+
+.focus-input {
+    border-bottom: 2px solid var(--light);
+    min-width: 35rem;
+    text-align: inherit;
+    cursor: auto;
+}

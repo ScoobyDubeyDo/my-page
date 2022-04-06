@@ -1,8 +1,9 @@
-import { RiSearchLine, RiGoogleFill, RiSettings5Fill } from "react-icons/ri";
+import { RiSettings5Fill } from "react-icons/ri";
 import { useState } from "react";
 import {
     CurrentTime,
     Greeting,
+    SearchBox,
     TodaysFocus,
     Todos,
     Weather,
@@ -10,7 +11,6 @@ import {
 import { useQuoteDetails } from "../hooks";
 
 export const HomePage = () => {
-    const [searchInput, setSearchInput] = useState("");
     const { author, quote } = useQuoteDetails();
     const [showTodoBox, setShowTodoBox] = useState(
         JSON.parse(localStorage.getItem("showTodoBox"))
@@ -23,28 +23,7 @@ export const HomePage = () => {
             <div className="main">
                 <div className="top-bar">
                     <div className="top-left">
-                        <span className="search-box">
-                            <RiGoogleFill id="google-logo" />
-                            <RiSearchLine id="search-logo" />
-                            <form onSubmit={(e) => e.preventDefault()}>
-                                <input
-                                    type="text"
-                                    name="google-search"
-                                    autoComplete="off"
-                                    placeholder="Google Search"
-                                    className="search"
-                                    value={searchInput}
-                                    onChange={(e) =>
-                                        setSearchInput(e.target.value)
-                                    }
-                                    onKeyUp={(e) => {
-                                        if (e.key === "Enter") {
-                                            document.location.href = `https://www.google.com/search?q=${searchInput}`;
-                                        }
-                                    }}
-                                />
-                            </form>
-                        </span>
+                        <SearchBox />
                     </div>
                     <div className="top-right">
                         <Weather />

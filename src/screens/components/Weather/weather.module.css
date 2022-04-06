@@ -95,3 +95,7 @@
 .weather-details-row-two > *:first-child {
     align-items: flex-start;
 }
+
+.loader > * {
+    display: block;
+}

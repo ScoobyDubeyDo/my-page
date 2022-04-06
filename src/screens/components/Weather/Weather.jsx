@@ -88,7 +88,7 @@ export const Weather = () => {
     return (
         <span className={`${style["weather-box"]}`}>
             {isLoading ? (
-                <div className="loader">
+                <div className={`${style["loader"]}`}>
                     <CircleLoader speedMultiplier={1.5} color="#ffffff" />
                 </div>
             ) : weatherFetchError !== "" ? (
@@ -120,7 +120,7 @@ export const Weather = () => {
                             spellCheck={false}
                             autoComplete="off"
                             type="text"
-                            className="weather-search heading-6"
+                            className="heading-6"
                             value={citySearchInput}
                             onChange={(e) => setCitySearchInput(e.target.value)}
                             onKeyPress={(e) => {

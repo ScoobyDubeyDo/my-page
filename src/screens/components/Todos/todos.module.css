@@ -41,3 +41,15 @@
 .todo-item input[type="checkbox"] {
     margin: 0 0.5rem;
 }
+
+.todos-input {
+    align-self: flex-end;
+    width: 100%;
+    font-size: 1rem;
+    padding: unset;
+    margin: 0.5rem 0 0 0.5rem;
+}
+
+.todos-input::placeholder {
+    font-weight: 600;
+}

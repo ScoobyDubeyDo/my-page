@@ -91,7 +91,7 @@ export const Todos = () => {
             {!showTodosList && (
                 <input
                     type="text"
-                    className="todos-input"
+                    className={`${style["todos-input"]}`}
                     placeholder="New Todo"
                     value={todo}
                     autoFocus

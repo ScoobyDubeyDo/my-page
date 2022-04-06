@@ -39,10 +39,6 @@
     display: flex;
 }
 
-.loader > * {
-    display: block;
-}
-
 .bottom-left,
 .bottom-right,
 .top-right,
@@ -53,50 +49,7 @@
     justify-content: center;
 }
 
-.search-box {
-    display: inline-flex;
-    gap: 1rem;
-    padding: 0.5rem;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0.5rem;
-    border-bottom: 1.5px solid transparent;
-    transition: var(--transition);
-}
-
-.search-box:focus-within > #search-logo,
-#google-logo {
-    display: none;
-}
-
-.search-box:hover {
-    border-bottom: 1.5px solid #f1f5f971;
-    transition: var(--transition);
-}
-
-.search-box:focus-within {
-    border-bottom: 1.5px solid var(--light);
-    transition: var(--transition);
-}
-
-.search-box:focus-within > #google-logo {
-    display: block;
-}
-
-.search::placeholder {
-    color: var(--light);
-}
-
-.search-box:focus-within .search::placeholder {
-    color: #f1f5f971;
-}
-
-.weather-search,
-.todos-input,
-.focus-input,
-.name-input,
-.search {
+input[type="text"] {
     margin: 0 auto;
     background: none;
     border: none;
@@ -133,13 +86,6 @@ input[type="checkbox"]:checked::after {
     margin-right: 0.5rem;
     margin-left: auto;
     flex-basis: 6rem;
-}
-
-.name-input {
-    max-width: 15ch;
-    display: inline;
-    padding: unset;
-    text-align: center;
 }
 
 .tooltip-wrapper {
@@ -184,17 +130,6 @@ input[type="checkbox"]:checked::after {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-}
-
-
-
-
-
-.focus-input {
-    border-bottom: 2px solid var(--light);
-    min-width: 35rem;
-    text-align: inherit;
-    cursor: auto;
 }
 
 .bottom-bar {
@@ -254,14 +189,4 @@ input[type="checkbox"]:checked::after {
     cursor: pointer;
 }
 
-.todos-input {
-    align-self: flex-end;
-    width: 100%;
-    font-size: 1rem;
-    padding: unset;
-    margin: 0.5rem 0 0 0.5rem;
-}
 
-.todos-input::placeholder {
-    font-weight: 600;
-}

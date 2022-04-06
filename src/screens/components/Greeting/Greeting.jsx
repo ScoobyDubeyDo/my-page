@@ -38,12 +38,12 @@ export const Greeting = () => {
         >
             <span className={"icon-btn-ghost-sm hidden"}></span>
             <div className={`${style["greeting"]} heading-2`}>
-                <span>{`${partOfDay}, `}</span>
+                <span>{`${partOfDay},`}</span>
                 {!nameObj.isGettingChanged ? (
-                    <span>{`${nameObj.name}.`}</span>
+                    <span>{` ${nameObj.name}.`}</span>
                 ) : (
                     <input
-                        className="name-input heading-2"
+                        className={`${style["name-input"]} heading-2`}
                         autoFocus
                         type="text"
                         value={nameInput}

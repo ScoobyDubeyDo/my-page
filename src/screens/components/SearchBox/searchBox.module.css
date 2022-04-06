@@ -1,0 +1,38 @@
+.search-box {
+    display: inline-flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0.5rem;
+    border-bottom: 1.5px solid transparent;
+    transition: var(--transition);
+}
+
+.search-box:focus-within > #search-logo,
+#google-logo {
+    display: none;
+}
+
+.search-box:hover {
+    border-bottom: 1.5px solid #f1f5f971;
+    transition: var(--transition);
+}
+
+.search-box:focus-within {
+    border-bottom: 1.5px solid var(--light);
+    transition: var(--transition);
+}
+
+.search-box:focus-within > #google-logo {
+    display: block;
+}
+
+.search::placeholder {
+    color: var(--light);
+}
+
+.search-box:focus-within .search::placeholder {
+    color: #f1f5f971;
+}
