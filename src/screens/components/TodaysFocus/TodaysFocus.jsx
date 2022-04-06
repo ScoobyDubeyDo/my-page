@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { FiEdit3 } from "react-icons/fi";
+import { VscAdd } from "react-icons/vsc";
 import style from "./todaysFocus.module.css";
 
 export const TodaysFocus = () => {
@@ -67,12 +68,8 @@ export const TodaysFocus = () => {
                         Focus of the Day:
                     </div>
                     <div className={`${style["focus-done"]} flex-center`}>
-                        <span className="icon-btn-ghost-sm hidden">
-                            <FiEdit3 />
-                        </span>
-                        <span className="icon-btn-ghost-sm hidden">
-                            <CgClose />
-                        </span>
+                        <span className="icon-btn-ghost-sm hidden"></span>
+                        <span className="icon-btn-ghost-sm hidden"></span>
                         <label className="flex-center">
                             <input
                                 type="checkbox"
@@ -105,12 +102,23 @@ export const TodaysFocus = () => {
                                 {currentFocus.focusText}
                             </span>
                         </label>
-                        <button
-                            onClick={focusEditHandler()}
-                            className={`${style["focus-buttons"]} icon-btn-ghost-sm`}
-                        >
-                            <FiEdit3 />
-                        </button>
+                        <>
+                            {!currentFocus.focusDone ? (
+                                <button
+                                    onClick={focusEditHandler()}
+                                    className={`${style["focus-buttons"]} icon-btn-ghost-sm`}
+                                >
+                                    <FiEdit3 />
+                                </button>
+                            ) : (
+                                <button
+                                    onClick={() => focusDeleteHandler()}
+                                    className={`${style["focus-buttons"]} icon-btn-ghost-sm`}
+                                >
+                                    <VscAdd />
+                                </button>
+                            )}
+                        </>
                         <button
                             onClick={() => focusDeleteHandler()}
                             className={`${style["focus-buttons"]} icon-btn-ghost-sm`}
@@ -126,7 +134,7 @@ export const TodaysFocus = () => {
                     </div>
                     <input
                         className="focus-input heading-4"
-                        autoFocus
+                        autoFocus={currentFocus.inEdit ? true : false}
                         type="text"
                         value={focusInput}
                         onChange={(e) => {

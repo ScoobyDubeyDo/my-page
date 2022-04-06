@@ -1,0 +1,15 @@
+.greeting-name-display:hover > button {
+    visibility: visible;
+}
+
+.greeting-name-display {
+    gap: unset;
+}
+
+.greeting {
+    min-width: max-content;
+}
+
+.greeting > span:nth-child(2) {
+    max-width: 15ch;
+}

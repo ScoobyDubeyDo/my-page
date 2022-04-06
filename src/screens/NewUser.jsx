@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const NewUser = ({ setFlag }) => {
-    const [input, setInput] = useState("");
+    const [nameInput, setNameInput] = useState("");
 
     return (
         <div className="clock-greeting-display">
@@ -12,12 +12,13 @@ export const NewUser = ({ setFlag }) => {
                 <input
                     className="focus-input heading-4"
                     type="text"
+                    autoFocus
                     autoComplete="off"
                     spellCheck={false}
-                    onChange={(e) => setInput(e.target.value)}
+                    onChange={(e) => setNameInput(e.target.value)}
                     onKeyPress={(e) => {
                         if (e.key === "Enter") {
-                            localStorage.setItem("userName", input);
+                            localStorage.setItem("userName", nameInput);
                             setFlag((prev) => !prev);
                         }
                     }}

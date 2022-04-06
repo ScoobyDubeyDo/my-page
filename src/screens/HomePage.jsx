@@ -1,7 +1,12 @@
 import { RiSearchLine, RiGoogleFill, RiSettings5Fill } from "react-icons/ri";
-import date from "date-and-time";
-import { useEffect, useState } from "react";
-import { CurrentTime, TodaysFocus, Todos, Weather } from "./components";
+import { useState } from "react";
+import {
+    CurrentTime,
+    Greeting,
+    TodaysFocus,
+    Todos,
+    Weather,
+} from "./components";
 import { useQuoteDetails } from "../hooks";
 
 export const HomePage = () => {
@@ -10,19 +15,6 @@ export const HomePage = () => {
     const [showTodoBox, setShowTodoBox] = useState(
         JSON.parse(localStorage.getItem("showTodoBox"))
     );
-
-    const partOfDay = (() => {
-        const hr = date.format(new Date(), "HH");
-        if (hr >= 0 && hr < 12) {
-            return "Good morning";
-        } else if (hr === 12) {
-            return "Good noon";
-        } else if (hr >= 12 && hr <= 17) {
-            return "Good afternoon";
-        } else {
-            return "Good evening";
-        }
-    })();
 
     if (!author) return <></>;
 
@@ -61,9 +53,7 @@ export const HomePage = () => {
 
                 <div className="clock-greeting-display">
                     <CurrentTime />
-                    <div className="greeting heading-2">
-                        {`${partOfDay}, ${localStorage.getItem("userName")}.`}
-                    </div>
+                    <Greeting />
                     <TodaysFocus />
                 </div>
                 <div className="bottom-bar">
