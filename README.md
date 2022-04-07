@@ -1,4 +1,4 @@
-# Focussive
+# Your Desk
 
 Replace your boring new tab with a soothing wallpaper and increase your productivity by adding countdown, focus and todos for the day.
 
