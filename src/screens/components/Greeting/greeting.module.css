@@ -15,8 +15,9 @@
 }
 
 .name-input {
-    max-width: 15ch;
+    max-width: fit-content;
     display: inline;
     padding: unset;
     text-align: center;
+    width: attr(width);
 }
